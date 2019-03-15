@@ -36,7 +36,7 @@
             <a href="/concepts/how-applications-are-staged.html">How Applications Are Staged</a>
           </li>
           <li>
-            <a href="/concepts/diego/ssh-conceptual.html">Understanding Application SSH</a>
+            <a href="/concepts/diego/ssh-conceptual.html">Application SSH</a>
           </li>
           <li>
             <a href="/concepts/roles.html">Orgs, Spaces, Roles, and Permissions</a>
@@ -45,13 +45,13 @@
             <a href="/concepts/security.html">Cloud Foundry Security</a>
           </li>
           <li>
-            <a href="/concepts/container-security.html">Understanding Container Security</a>
+            <a href="/concepts/container-security.html">Container Security</a>
           </li>
           <li>
-            <a href="/concepts/understand-cf-networking.html">Understanding Container-to-Container Networking</a>
+            <a href="/concepts/understand-cf-networking.html">Container-to-Container Networking</a>
           </li>
           <li>
-            <a href="/concepts/grootfs-disk.html">Understanding GrootFS Disk Usage</a>
+            <a href="/concepts/grootfs-disk.html">GrootFS Disk Usage</a>
           </li>
           <li>
             <a href="/concepts/architecture/uaa.html">User Account and Authentication (UAA) Server</a>
@@ -61,9 +61,6 @@
           </li>
           <li>
             <a href="/concepts/http-routing.html">HTTP Routing</a>
-          </li>
-          <li>
-            <a href="/devguide/deploy-apps/stacks.html">Stacks</a>
           </li>
         </ul>
       </li>
@@ -123,6 +120,9 @@
               <a href="/concepts/high-availability.html">High Availability in Cloud Foundry</a>
             </li>
             <li>
+              <a href="/concepts/maintaining-high-availability.html">How Cloud Foundry Maintains High Availability</a>
+            </li>
+            <li>
               <a href="/deploying/common/log_drain_blacklists.html">Log Drain Blacklist Configuration</a>
             </li>
             <li>
@@ -135,6 +135,9 @@
       <li class="has_submenu">
         <a href="/adminguide/index.html">Administering Cloud Foundry</a>
         <ul>
+          <li>
+            <a href="/adminguide/stack-auditor.html">Using the Stack Auditor Plugin</a>
+          </li>
           <li>
             <a href="/adminguide/buildpacks.html">Managing Custom Buildpacks</a>
           </li>
@@ -149,6 +152,9 @@
           </li>
           <li>
             <a href="/adminguide/quota-plans.html">Creating and Modifying Quota Plans</a>
+          </li>
+          <li>
+            <a href="/adminguide/metadata.html">Using Metadata</a>
           </li>
           <li>
             <a href="/adminguide/notifications.html">Getting Started with the Notifications Service</a>
@@ -321,31 +327,54 @@
           Developing and Managing Applications
         </span>
         <ul>
+          <li class="has_submenu">
+          <a href="/devguide/push.html">cf push</a>
+          <ul>
+            <li>
+              <a href="/devguide/deploy-apps/deploy-app.html">Deploying an App</a>
+            </li>
+            <li>
+              <a href="/devguide/deploy-apps/manifest.html">Deploying with App Manifests</a>
+            </li>
+            <li>
+              <a href="/devguide/deploy-apps/manifest-attributes.html">App Manifest Attribute Reference</a>
+            </li>
+            <li>
+              <a href="/devguide/deploy-apps/push-docker.html">Deploying an App with Docker</a>
+            </li>
+            <li>
+              <a href="/devguide/deploy-apps/large-app-deploy.html">Deploying a Large App</a>
+            </li>
+            <li>
+              <a href="/devguide/deploy-apps/start-restart-restage.html">Starting, Restarting, and Restaging Apps</a>
+            </li>
+            <li>
+              <a href="/devguide/multiple-processes.html">Deploying an App with Multiple Processes (Beta)</a>
+            </li>
+            <li>
+              <a href="/devguide/push-sub-commands.html">Running cf push Sub-Step Commands (Beta)</a>
+            </li>
+            <li>
+              <a href="/devguide/deploy-apps/rolling-deploy.html">Rolling App Deployments (Beta)</a>
+            </li>
+            <li>
+            <a href="/devguide/deploy-apps/app-lifecycle.html">App Container Lifecycle</a>
+            </li>
+            <li>
+            <a href="/devguide/deploy-apps/troubleshoot-app-health.html">Troubleshooting App Deployment and Health</a>
+          </li>
+          </ul>
+          </li>
           <li>
             <a href="/devguide/deploy-apps/prepare-to-deploy.html">Considerations for Designing and Running an App in the Cloud</a>
-          </li>
-          <li>
-            <a href="/devguide/deploy-apps/deploy-app.html">Deploy an App</a>
-          </li>
-          <li>
-            <a href="/devguide/deploy-apps/large-app-deploy.html">Deploy a Large App</a>
-          </li>
-          <li>
-            <a href="/devguide/deploy-apps/push-docker.html">Deploy an App with Docker</a>
-          </li>
-          <li>
-            <a href="/devguide/deploy-apps/start-restart-restage.html">Starting, Restarting, and Restaging Apps</a>
-          </li>
-          <li>
-            <a href="/devguide/deploy-apps/manifest.html">Deploying with App Manifests</a>
-          </li>
-          <li>
-            <a href="/devguide/deploy-apps/app-lifecycle.html">App Container Lifecycle</a>
           </li>
           <li>
             <a href="/devguide/deploy-apps/healthchecks.html">Using Application Health Checks</a></li>
           <li>
             <a href="/devguide/deploy-apps/cf-scale.html">Scaling an App Using cf scale</a>
+          </li>
+          <li>
+            <a href="/devguide/deploy-apps/stacks.html">Changing Stacks</a>
           </li>
           <li>
             <a href="/devguide/using-tasks.html">Running Tasks</a>
@@ -354,29 +383,14 @@
             <a href="/devguide/deploy-apps/routes-domains.html">Routes and Domains</a>
           </li>
           <li>
-            <a href="/devguide/deploy-apps/stacks.html">Changing Stacks</a>
-          </li>
-          <li>
             <a href="/devguide/deploy-apps/environment-variable.html">Cloud Foundry Environment Variables</a>
           </li>
           <li>
             <a href="/devguide/deploy-apps/blue-green.html">Using Blue-Green Deployment to Reduce Downtime and Risk</a>
           </li>
-					<li class="">
-						<a href="/devguide/deploy-apps/zero-downtime.html">Deploying Apps with Zero Downtime (Beta)</a>
-					</li>
-          <li class="">
-                  <a href="/devguide/push-sub-commands.html">Running cf push Sub-Step Commands  (Beta)</a>
-               </li>
-               <li class="">
-                  <a href="/devguide/multiple-processes.html">Pushing an App with Multiple Processes (Beta)</a>
-               </li>
           <li><a href="/devguide/custom-ports.html" class="subnav">Configuring Apps to Listen on Custom Ports (Beta)</a></li>
           <li>
             <a href="/devguide/deploy-apps/streaming-logs.html">App Logging in Cloud Foundry</a>
-          </li>
-          <li>
-            <a href="/devguide/deploy-apps/troubleshoot-app-health.html">Troubleshooting App Deployment and Health</a>
           </li>
           <li>
             <a href="/devguide/deploy-apps/app-ssh-overview.html">App SSH Overview</a>
@@ -447,7 +461,7 @@
             <a href="/buildpacks/using-buildpacks.html">About Buildpacks</a>
             <ul>
               <li>
-                <a href="/buildpacks/understand-buildpacks.html">Understanding Buildpacks</a>
+                <a href="/buildpacks/understand-buildpacks.html">Buildpacks</a>
               </li>
               <li>
                 <a href="/buildpacks/stack-association.html">Stack Association</a>
