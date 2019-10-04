@@ -15,9 +15,28 @@ template_variables:
   support_link: <a href="https://developer.swisscom.com/support/" target="_blank">Get Involved</a>
   support_call_to_action: <a href="https://developer.swisscom.com/support/" target="_blank">Get Involved</a>
   support_url: https://developer.swisscom.com/support/
-
   gtm_account_id: GTM-MW4LZHR
 
+# Product variables
+  platform_name: Cloud Foundry
+  platform_old: Cloud Foundry
+  platform_code: CF
+  app_runtime_full: Cloud Foundry Application Runtime
+  app_runtime: CFAR
+  app_runtime_abbr: CFAR
+  app_runtime_abbr_lc: cfar
+  k8s_runtime_full: Cloud Foundry Container Runtime
+  k8s_runtime: CFCR
+  k8s_runtime_abbr: CFCR
+  windows_runtime_full: Cloud Foundry Application Runtime
+  windows_runtime: CFAR
+  windows_runtime_abbr: CFAR
+
+# Deprecated variables -- replace with current product variables when possible
+  product_name: CF
+  product_short: Cloud Foundry
+
+# Book content variables
   add_volumes_link: See the <a href="../../running/deploy-vol-services.html">Adding Volume Services to your Deployment</a> topic for more information.
   admin_read_only_role: <ul><li><strong>Admin Read-Only</strong> is a user role that has been assigned the <code>cloud_controller.admin_read_only</code> scope in UAA. This role has read-only access to all Cloud Controller API resources.</li></ul>
   admin_role: <ul><li><strong>Admin</strong> is a user role that has been assigned the <code>cloud_controller.admin</code> scope in UAA. An admin user has permissions on all orgs and spaces and can perform operational actions using the <a href="http://apidocs.cloudfoundry.org/">Cloud Controller API</a>. To create an account with <code>cloud_controller.admin</code> scope for your installation, see the <a href="../adminguide/uaa-user-management.html#creating-admin-users">Create an Admin User</a> topic.</li></ul>
@@ -84,7 +103,7 @@ template_variables:
   diego_deploy: To deploy Diego, see the GitHub <a href="https://github.com/cloudfoundry-incubator/diego-release">Diego-Release</a>.
   diego_ssh_link: <a href="../diego/ssh-conceptual.html">Diego SSH package</a>
   disable_custom_buildpacks_note: Operators can choose to disable custom buildpacks in an entire deployment. For more information, see the <a href="../adminguide/buildpacks.html#disabling-custom-buildpacks">Disabling Custom Buildpacks</a> section of the Managing Custom Buildpacks topic.
-  disable_custom_buildpacks: You can disable custom buildpacks for an entire deployment by setting the <code>cc.disable\_custom\_buildpacks</code> property to <code>true</code> in your Cloud Foundry deployment manifest. See the <a href="../deploying/index.html">Deploying Cloud Foundry</a> section for more information about creating and editing a manifest.
+  disable_custom_buildpacks: You can disable custom buildpacks for an entire deployment by adding <code>disable\_custom\_buildpacks&#58; true</code> in your Cloud Foundry manifest under <code>properties.cc</code>.
   disable_custom: <h2> <a id='disabling-custom-buildpacks'></a>Disabling Custom Buildpacks </h2> Operators can choose to disable custom buildpacks. For more information, see [Disabling Custom Buildpacks](../adminguide/buildpacks.html#disabling-custom-buildpacks).
   docker_auth: To run Docker containers, Cloud Foundry needs the ability to access Docker registries using a Certificate Authority. The <a href="https://bosh.io/docs/trusted-certs.html">Configuring Trusted Certificates</a> topic explains how to configure this access.
   domain_name: docs.developer.swisscom.com
@@ -104,7 +123,7 @@ template_variables:
   external_ips: external IP addresses
   ga_account_id: UA-22181585-2
   gen_GSG:
-  global_auditor_role:  <ul><li><strong>Global Auditor</strong> is a user role that has been assigned the <code>cloud_controller.global_auditor</code> scope in UAA. This role has read-only access to all Cloud Controller API resources except for secrets such as environment variables. The Global Auditor role cannot access those values.</li></ul>
+  global_auditor_role:  "<ul><li><strong>Global Auditor</strong>: Read-only access to all Cloud Controller API resources except for secrets, such as environment variables. The Global Auditor role cannot access those values. Assigned the <code>cloud_controller.global_auditor</code> scope in UAA.</li></ul>"
   grant_devs_c2c: edit your BOSH manifest to include the <code>enable_space_developer_self_service</code> property in the <a href="https://github.com/cloudfoundry/cf-networking-release/blob/master/jobs/policy-server/spec">cf-networking-release policy-server job</a> and set that property to <code>true</code>
   GSG_intro_sentence:
   health_monitor_footnote: <a href="https://docs.developer.swisscom.com/running/hm-notifications.html">Configuring Health Monitor Notifications</a>
@@ -131,6 +150,7 @@ template_variables:
   manifest_vs_cli_asg: You may also define ASGs in your Cloud Foundry deployment manifest, but these definitions only create security groups during first-time installation. To avoid confusion, any such definitions in the manifest should be generic. The cf CLI commands create-security-group and bind-security-group overwrite ASG definitions from the manifest. Upgrading Cloud Foundry retains ASG definitions made from the CLI and ignores any ASG definitions in the newer manifest.
   max_app_size_table: Set in the <code>cc.packages.max_package_size</code> in the manifest
   max_app_size: the maximum app file size set in the <code>cc.packages.max\_package\_size</code> property in the manifest
+  max_healthcheck_timeout: <code>cc.maximum_health_check_timeout</code> defaults to the maximum of `180` seconds, but your Cloud Foundry operator can set it to a different value.
   max_in_flight_header: <h3>Setting <code>max_in_flight</code> values</h3>
   max_in_flight_config: For more information, see the <a href="https://bosh.io/docs/deployment-manifest.html#update">BOSH manifest</a> documentation.
   net_traffic_rules: <a href="https://docs.developer.swisscom.com/concepts/asg.html">network traffic rules</a>
@@ -143,7 +163,7 @@ template_variables:
   om_resurrector_text:
   or_apps_man2:
   platform_ssh_configuration: Cloud Foundry deployments control SSH access to apps at the Cloud Foundry level. Additionally, Cloud Foundry supports load balancing of SSH sessions. The [Configuring SSH Access](../../running/config-ssh.html) topic describes how to set SSH access for your deployment.
-  pools_link: <a href="https://bosh.io/docs/deployment-basics/#resource-pools">Building a Manifest</a> in the Cloud Foundry BOSH documentation
+  pools_link: <a href="https://bosh.io/docs/deployment-basics/#resource-pools">Building a Manifest</a> in the Cloud Foundry BOSH documentation.
   port_limitations: To support WebSockets, the operator must configure the load balancer correctly. Depending on the configuration, clients may have to use a different port for WebSocket connections, such as port 4443, or a different domain name. For more information, see the [Supporting WebSockets](../../adminguide/supporting-websockets.html) topic.
   port_limitations_1: To support WebSockets, the operator must configure the load balancer correctly. Depending on the configuration, clients may have to use a different port for WebSocket connections, such as port 4443, or a different domain name. For more information, see the [Supporting WebSockets](../adminguide/supporting-websockets.html) topic.
   private_app_domain: private-domain.example.com
@@ -227,4 +247,7 @@ template_variables:
   grootfs_reserved_space: Alternatively, you can set the GrootFS <code>reserved_space_for_other_jobs_in_mb</code> property to a higher value.
   grootfs_disk_usage_link: For more information on how to calculate GrootFS disk usage in your deployment, see <a href="../adminguide/examining_grootfs_disk.html">Examining GrootFS Disk Usage</a>.
   zdt_enable: Use capi-release v0.168.0 or later and deploy the [cc\_deployment\_updater](https://github.com/cloudfoundry/cf-deployment/blob/master/operations/experimental/add-deployment-updater.yml). For this ops file, there are also [external-db](https://github.com/cloudfoundry/cf-deployment/blob/master/operations/experimental/add-deployment-updater-external-db.yml) and [postgres](https://github.com/cloudfoundry/cf-deployment/blob/master/operations/experimental/add-deployment-updater-postgres.yml) variants.
-
+  get_auditor_binary: Download the Stack Auditor binary for your OS from the [releases page](https://github.com/cloudfoundry/stack-auditor/releases) of the `stack-auditor` repository.
+  droplet_config: <code>system_blobstore_ccdroplet_max_staged_droplets_stored</code> property in the Cloud Foundry manifest.
+  blobstore_link: <a href="../deploying/common/cc-blobstore-config.html">Cloud Controller Blobstore Configuration</a>
+  capi_sidecar_req: <p class="note"><strong>Note</strong><span>:</span> This feature requires that your Cloud Foundry deployment uses capi-release 1.790 or later.</p>
