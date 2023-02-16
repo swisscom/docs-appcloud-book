@@ -1,7 +1,11 @@
 output
 final_app
 .bundle
+vendor/
 cached_shas.yml
+Gemfile.lock
 **/.sass-cache/*
 bin
 .DS_Store
+.ruby-version
+.idea/

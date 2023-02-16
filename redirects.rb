@@ -42,6 +42,8 @@ r301 '/devguide/installcf/whats-new-v6.html', '/cf-cli/getting-started.html'
 r301 '/devguide/installcf/http-proxy.html', '/cf-cli/http-proxy.html'
 r301 %r{/devguide/installcf/(.*)}, '/cf-cli/$1'
 r301 %r{/devguide/cf-cli/(.*)}, '/cf-cli/$1'
+r301 '/cf-cli/cf-help.html', 'https://cli.cloudfoundry.org/en-US/v6/'
+r301 '/cf-cli/cf7-help.html', 'https://cli.cloudfoundry.org/en-US/v7/'
 
 r301 '/devguide/deploy-apps/manifest.html#deprecated', '/devguide/deploy-apps/manifest-attributes.html#deprecated'
 
@@ -74,7 +76,7 @@ r302 '/devguide/deploy-apps/app-startup.html', '/devguide/deploy-apps/start-rest
 r301 '/adminguide/hm-notifications.html', '/running/hm-notifications.html'
 r301 '/services/volume-services-v2.10.html', '/devguide/services/volume-services.html'
 r301 '/services/volume-services-v2.9.html', '/devguide/services/volume-services.html'
-r301 '/devguide/services/migrate-db.html', '/devguide/services/index.html#migrating'
+r301 '/devguide/services/migrate-db.html', '/services/overview.html#migrating'
 
 r301 %r{/services/api-v(.*)}, '/services/api.html'
 
@@ -113,3 +115,8 @@ r301 '/services/volume-services.html', 'https://github.com/openservicebrokerapi/
 r301 '/adminguide/manage-domains-routes.html', '/devguide/deploy-apps/routes-domains.html'
 
 r301 '/running/troubleshooting/troubleshooting-diego-windows.html', '/running/troubleshooting/'
+
+r301 '/concepts/architecture/router.html', '/concepts/cf-routing-architecture.html'
+
+# BBR release notes redirect
+r301 '/bbr/bbr-rn.html', 'https://github.com/cloudfoundry-incubator/bosh-backup-and-restore/releases'

@@ -22,22 +22,28 @@ template_variables:
   platform_old: Cloud Foundry
   platform_code: CF
   product_name_lc: cf
+  app_runtime_first: Cloud Foundry
   app_runtime_full: Cloud Foundry
-  app_runtime: CF
-  app_runtime_abbr: CF
+  app_runtime: Cloud Foundry
+  app_runtime_abbr: Cloud Foundry
   app_runtime_abbr_lc: cf
+  k8s_runtime_first: Cloud Foundry
   k8s_runtime_full: Cloud Foundry
-  k8s_runtime: CF
-  k8s_runtime_abbr: CF
+  k8s_runtime: Cloud Foundry
+  k8s_runtime_abbr: Cloud Foundry
+  windows_runtime_first: Cloud Foundry
   windows_runtime_full: Cloud Foundry
-  windows_runtime: CF
+  windows_runtime: Cloud Foundry
   windows_runtime_abbr: CF
   company_name: Cloud Foundry
+  
+# Current version for partials
+  current_major_version: "4-0"
 
 # Deprecated variables -- replace with current product variables when possible
-  product_name: CF
+  product_name: Cloud Foundry
   product_runtime: Cloud Foundry
-  product_short: CF
+  product_short: Cloud Foundry
 
 # Book content variables
   add_volumes_link: See the <a href="../../running/deploy-vol-services.html">Adding Volume Services to your Deployment</a> topic for more information.
@@ -69,6 +75,7 @@ template_variables:
   billing_manager_role_note: <p class="note"><strong>Note</strong>&#58; The Billing Account Owner role is specific to the Swisscom Application Cloud and can therefore only be assigned through the web console.</p>
   billing_manager_role: <ul><li><strong>Billing Account Owners</strong> manage [billing accounts](../billing/accounts.html.md.erb) and have access to invoices.</li></ul>
   blobstore_kb:
+  buildpacks_link: <a href="https://docs.developer.swisscom.com/buildpacks/index.html">Buildpacks</a>
   cc_logging_default: <p class="note"><strong>Note</strong><span>:</span> By default, Cloud Foundry does not enable Cloud Controller request logging. To enable this feature, you must set the <code>cc.security_event_logging.enabled</code> property in your Cloud Foundry manifest to <code>true</code> and redeploy.</p>
   cfdot_kb: When logged into a VM hosting an app, you can use tools like the Cloud Foundry Diego Operator Toolkit (cfdot) to run app status diagnostics. For more information, see the [cfdot](https://github.com/cloudfoundry/cfdot) repository on GitHub and the [cfdot CLI](https://docs.cloudfoundry.org/running/monitoring-test.html#cfdot) section of the _Monitoring and Testing Diego Components_ topic.
   cipher_suites: You can override the default cipher suites by changing the `router.cipher_suites` and `router.min_tls_version` BOSH manifest properties.
@@ -88,7 +95,8 @@ template_variables:
   container_metrics: "This property is set to true by default in your [BOSH release](https://github.com/cloudfoundry/cf-syslog-drain-release/blob/v6.x/jobs/adapter/spec#L61-L66).<br><br><br>  Once `scalablesyslog.adapter.metrics_to_syslog_enabled` is set to `true`, run the following cf CLI command to include container metrics in your syslog drain:<pre>cf drain APP-NAME DRAIN-URL --type metrics --drain-name YOUR-SYSLOG-DRAIN</pre>Where:<br> <ul><li><code>APP-NAME</code> is your app name.</li> <li><code>YOUR-SYSLOG-DRAIN</code> is the name of your syslog drain.</li><li><code>DRAIN-URL</code> is the URL of your syslog drain.</li></ul>"
   container_network_link: For information about administering container-to-container network policies, see <a href="../devguide/deploy-apps/cf-networking.html">Configuring Container-to-Container Networking</a>.
   cookies_shared_domain_1:
-  cookies_shared_domain_2: For an application using a shared domain such as <code>example.com</code>, a cookie set to use the highest domain has a <code>Domain</code> attribute of <code>.example.com</code> in its HTTP response header.
+  cookies_shared_domain_2: For an app using a shared domain such as `example.com`, a cookie set to use the highest domain has a `Domain` attribute of `.example.com` in its HTTP response header.
+  credhub_link: <a href="https://docs.developer.swisscom.com/credhub/index.html">CredHub</a>
   cse_id: 007825266128181862773:p5mbyfhxvi8
   custom_load_balancer:
   custom_services: If you are interested in building services for Cloud Foundry and making them available to end users, see <a href="http://docs.cloudfoundry.org/services/index.html">Services</a>.
@@ -133,8 +141,10 @@ template_variables:
   grant_devs_c2c: edit your BOSH manifest to include the `enable_space_developer_self_service` property in the [cf-networking-release policy-server job](https://github.com/cloudfoundry/cf-networking-release/blob/master/jobs/policy-server/spec) and set that property to `true`
   GSG_intro_sentence:
   health_monitor_footnote: <a href="https://docs.developer.swisscom.com/running/hm-notifications.html">Configuring Health Monitor Notifications</a>
-  http_routing: For more information, see the [Securing Traffic into Cloud Foundry](../adminguide/securing-traffic.html) topic.
-  healthcheck_duration: The duration of the healthcheck Service Unavailable response is configurable using the manifest property <code>router.requested_route_registration_interval_in_seconds</code>, which defaults to 20 seconds.
+  http2_admin_link: For information about configuring support for HTTP/2 in Cloud Foundry, see <a href="https://docs.developer.swisscom.com/adminguide/supporting-http2.html">Configuring HTTP/2 Support</a>.
+  http2_support_version: In routing-release v0.224.0 and later, HTTP/2 support is enabled by default.
+  http_routing: For more information, see [Securing Traffic into Cloud Foundry](../adminguide/securing-traffic.html).
+  healthcheck_duration: The duration of the health check Service Unavailable response is configurable using the manifest property `router.requested_route_registration_interval_in_seconds`, which defaults to 20 seconds.
   info_loc: In your Cloud Foundry deployment manifest
   ipsec_note:
   keepalive: For more information, see [Gorouter Back End Keep-Alive Connections](../adminguide/routing-keepalive.html).
@@ -145,6 +155,7 @@ template_variables:
   link_adminguide_buildpack: For more information, see [Managing Custom Buildpacks](../adminguide/buildpacks.html).
   link_adminguide_commands: <p class="note"><strong>Note</strong>&#58; An Org Manager needs explicit admin permissions to perform certain actions. To create a user with admin rights, see <a href="../uaa/uaa-user-management.html">Creating and Managing Users with the UAA CLI (UAAC)</a>.</p>
   link_adminguide_domains: For admin-specific commands, see [Managing Domains and Routes](../../adminguide/manage-domains-routes.html).
+  link_configure_trusted_certificates: For information about providing trusted certificates to applications running on Cloud Foundry, see [Configuring Trusted System Certificates for Applications](../../running/trusted-system-certificates.html).
   log_management:
   logg_forwarding: the [Enabling System Log Forwarding](../running/managing-cf/logging-config.html#syslog-forward) section of the _Configuring System Logging_ topic.
   logg_scaling: <a href="../running/managing-cf/logging-config.html#scaling">Scaling Loggregator</a> section of the <em>Configuring System Logging</em> topic.
@@ -157,11 +168,11 @@ template_variables:
   max_app_size_table: Set in the <code>cc.packages.max_package_size</code> in the manifest
   max_app_size: the maximum app file size set in the <code>cc.packages.max_package_size</code> property in the manifest
   max_healthcheck_timeout: <code>cc.maximum_health_check_timeout</code> defaults to the maximum of `180` seconds, but your Cloud Foundry operator can set it to a different value.
-  max_in_flight_header: <h3>Setting <code>max_in_flight</code> values</h3>
-  max_in_flight_config: For more information, see the <a href="https://bosh.io/docs/deployment-manifest.html#update">BOSH manifest</a> documentation.
+  max_in_flight_header: <h3>Setting `max_in_flight` values</h3>
+  max_in_flight_config: For more information, see the [Update Block](https://bosh.io/docs/deployment-manifest.html#update) section of the _Deployment Manifest v1_ topic in the BOSH documentation.
   net_traffic_rules: <a href="https://docs.developer.swisscom.com/concepts/asg.html">network traffic rules</a>
-  mutual_tls_tcp: <p class='note'><strong>Note:</strong> If you have <a href="https://docs.cloudfoundry.org/concepts/http-routing.html#tls-to-back-end">mutual TLS between Gorouter and app containers</a>, app containers accept incoming communication only from the Gorouter. This disables TCP routing.</p>
-  mutual_tls_ssh: <p class='note'><strong>Note:</strong> If you have <a href="https://docs.cloudfoundry.org/concepts/http-routing.html#tls-to-back-end">mutual TLS between Gorouter and app containers</a>, app containers accept incoming communication only from the Gorouter. This disables <code>cf ssh</code>.</p>
+  mutual_tls_tcp: <p class='note'><strong>Note:</strong> If you have mutual TLS app identity verification enabled, app containers accept incoming communication only from the Gorouter. This disables TCP routing. For more information, see <a href="https://docs.developer.swisscom.com/concepts/http-routing.html#tls-to-back-end">TLS to Apps and Other Back End Services</a> in <em>HTTP Routing</em>.</p>
+  mutual_tls_ssh: <p class='note'><strong>Note:</strong> If you have mutual TLS between the Gorouter and app containers, app containers accept incoming communication only from the Gorouter. This disables <code>cf ssh</code>. For more information, see the <a href="https://docs.developer.swisscom.com/concepts/http-routing.html#tls-to-back-end">TLS to Apps and Other Back End Services</a> section of the <em>HTTP Routing</em> topic.</p>
   net_traffic_rules: <a href="http://docs.cloudfoundry.org/concepts/asg.html">network traffic rules</a>
   notifications_api_1: For more information about the Notifications Service, see the Notifications API [v1](https://github.com/cloudfoundry-incubator/notifications/blob/master/V1_API.md) or [v2](https://github.com/cloudfoundry-incubator/notifications/blob/master/V2_API.md) documentation.
   notifications_link: <a href="../../adminguide/notifications.html">Notification Service</a>
@@ -192,13 +203,12 @@ template_variables:
   self_signed: Before following the procedure below, the developer must obtain either the self-signed certificate or the intermediate and CA certificates used to sign the deployment's certificate. The developer can obtain these certificates from the Cloud Foundry operator or from the deployment manifest. For more information about how to retrieve certificates from the deployment manifest, see [Securing Traffic into Cloud Foundry](../adminguide/securing-traffic.html).
   services: <a href="http://docs.cloudfoundry.org/services/index.html">services</a>
   ssh_marketplace_output: mysql  100mb MySQL databases on demand
-  ssh_marketplace_step: List the marketplace services available using the [cf marketplace](http://cli.cloudfoundry.org/en-US/cf/marketplace.html) command.
+  ssh_marketplace_step: Run `cf marketplace` to list the marketplace services available.
   ssh_service_access_key: <br>{<br>"hostname"<span>:</span> "us-cdbr-iron-east-01.mysql.net",<br>"jdbcUrl"<span>:</span> "jdbc:mysql://us-cdbr-iron-east-03.mysql.net/ad\_b2fca6t49704585d?user=b5136e448be920\u0026password=231f435o05",<br>"name"<span>:</span> "ad\_b2fca6t49704585d",<br>"password"<span>:</span> "231f435o05",<br>"port"<span>:</span> "3306",<br>"uri"<span>:</span> "mysql://b5136e448be920:<span>231f435o05<span>@</span>us-cdbr-iron-east-03.mysql.net</span>:3306/ad\_b2fca6t49704585d?reconnect=true",<br>"username"<span>:</span> "b5136e448be920"<br>}<br>
   ssh_service_host: us-cdbr-iron-east-01.mysql.net
   ssh_service_plan: 100mb
   ssh_service: MySQL
   ssl:
-  services_overview_ref: For more information about migrating database schemas, see [Services](https://docs.pivotal.io/pivotalcf/devguide/services/index.html).
   setting_rate_limit_cloud_api: <li><a href="../running/setting-rate-limit-cloud-api.html" class="subnav">Setting the Rate Limit for the Cloud Controller API</a></li>
   starting_container_count_maximum: For information about how to configure this setting, see [Configuring Diego for Upgrades](../running/diego-upgrades.html).
   suspended_roles_table: "_suspended_org_roles_table"
@@ -222,7 +232,7 @@ template_variables:
   ssl_haproxy:
   garden_runc:
   tasks_ai:
-  cf_networking: For more information about how to enable and use container-to-container networking, see [Configuring Container-to-Container Networking](../devguide/deploy-apps/cf-networking.html).<p>When the container-to-container networking feature is disabled, all app-to-app traffic must go through the Gorouter. For more information, see [Gorouter](./architecture/router.html).
+  cf_networking: For more information about how to enable and use container-to-container networking, see [Configuring Container-to-Container Networking](../devguide/deploy-apps/cf-networking.html).<p>When the container-to-container networking feature is disabled, all app-to-app traffic must go through the Gorouter.</p>
   isolation_segments_create:
   install_isolation_segments: For more information about creating isolation segments, see [Managing Isolation Segments](isolation-segments.html).
   isolation_segments_note: <p class="note"><strong>Note<span>:</span></strong> The isolation segment name used in the cf CLI command must match the value specified in the <code>placement_tags</code> section of the Diego manifest file. If the names do not match, Cloud Foundry fails to place apps in the isolation segment when apps are started or restarted in the space assigned to the isolation segment.</p>
@@ -235,7 +245,6 @@ template_variables:
   xfcc_always_forward: This mode is enabled by default or when `router.forwarded_client_cert<span>:</span> always_forward`.
   xfcc_mtls_forward: This mode is enabled when `router.forwarded_client_cert<span>:</span> forward`.
   xfcc_strip: This mode is enabled when `router.forwarded_client_cert<span>:</span> sanitize_set`.
-  aws_lb_cipher_suites: "oss_aws_lb_cipher_suites"
   gorouter_sni: <li>The Gorouter supports SNI and can be configured with multiple certificates, each which may optionally include wildcard and alternative names.
   multiple_certs_gorouter: To configure multiple HTTPS certificates for Cloud Foundry, specify those certificate keypairs in the `router.tls_pem` property.
   uaa_admin_client_creds: Record the **uaa:admin:client_secret** from your deployment manifest.
@@ -257,6 +266,7 @@ template_variables:
   blobstore_link: <a href="../deploying/common/cc-blobstore-config.html">Cloud Controller Blobstore Configuration</a>
   capi_sidecar_req: <p class="note"><strong>Note</strong><span>:</span> This feature requires that your Cloud Foundry deployment uses capi-release 1.790 or later.</p>
   enable_docker_link: To enable Docker support, see the [Enable Docker](../../adminguide/docker.html#enable) section of the _Using Docker in Cloud Foundry_ topic.
+  nozzle_info_link: see [Scaling Nozzles](log-ops-guide.html#scaling-nozzles) in _Loggregator Guide for CF Operators_.
   slow_nozzle_alerts_link: For more information, see the [Slow Nozzle Alerts](../../loggregator/log-ops-guide.html#slow-noz) section of the _Loggregator Guide for Cloud Foundry Operators_ topic.
   scaling_nozzles_link: For more information, see the [Scaling Nozzles](../../loggregator/log-ops-guide.html#scaling-nozzles) section of the _Loggregator Guide for Cloud Foundry Operators_ topic.
   scaling_loggregator_link: For more information, see [Scaling Loggregator](../../loggregator/log-ops-guide.html#scaling) in _Loggregator Guide for Cloud Foundry Operators_.
@@ -266,3 +276,5 @@ template_variables:
   network_policy_quota: The maximum number of policies that a Space Developer can add in a space is set by the `max_policies_per_app_source` property in the `policy-server` job in the Cloud Foundry deployment manifest. By default, the maximum is 50.
   network_policy_quota_config: To change the network policy quota for Space Developers, the Cloud Foundry operator must configure the `max_policies_per_app_source` property, then re-deploy Cloud Foundry.
   human_readable_timestamp:
+  app_rate_log_limit_config: the `max_log_lines_per_second` property in your `cf-deployment.yml` file
+  find_metric_name_source_id: see [CF Component Metrics](../running/all_metrics.html) and [UAA Performance Metrics](../uaa/uaa-metrics.html)

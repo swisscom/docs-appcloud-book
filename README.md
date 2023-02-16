@@ -4,7 +4,7 @@ This project publishes the App Cloud documentation as a web application.
 
 These docs can be reached at <https://docs.developer.swisscom.com>
 
-## What's in this Repo
+## What's in this Repository
 
 This repo uses the [Bookbindery gem](http://rubygemsearch.org/rubygems/bookbindery) to generate the documentation as a web application.
 
