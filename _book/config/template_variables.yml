@@ -24,7 +24,6 @@ template_variables:
   api_endpoint: the URL of the Cloud Controller in your App Cloud instance
   api_v1_format: <a href="http://docs.cloudfoundry.org/services/api-v1.html">v1 format</a>
   api_v2_format: <a href="http://docs.cloudfoundry.org/services/api.html">v2 format</a>
-  api_version: To determine your CC API version, follow the instructions in [Identifying your Cloud Foundry API Endpoint and Version](https://docs.cloudfoundry.org/running/cf-api-endpoint.html).
   app_domain: scapp.io
   app_healthcheck_timeout: In Cloud Foundry, the default timeout is 60 seconds and the default maximum configurable timeout is 180 seconds. Your Cloud Foundry operator can set other values for these defaults.
   app_runtime: Cloud Foundry Application Runtime
@@ -59,7 +58,6 @@ template_variables:
   concepts_product_model_header:
   concepts_product_model_image:
   concepts_product_model_text: "./overview_model"
-  console_2: If you have a Cloud Foundry account, refer to the <a href="http://docs.cloudfoundry.org/running/cf-api-endpoint.html">Identifying your Cloud Foundry API Endpoint and Version</a> topic to determine the URL of the Cloud Controller in your Cloud Foundry instance. Click <strong>Manage Cloud...</strong> to add this URL to your Cloud Foundry account. Validate the account and continue through the wizard.</a>
   console_links:
   contact_support:
   container_network_link: For information about administering container-to-container network policies, see <a href="../devguide/deploy-apps/cf-networking.html">Administering Container-to-Container Networking</a>.
