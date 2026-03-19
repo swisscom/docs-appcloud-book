@@ -16,7 +16,6 @@ template_variables:
   support_call_to_action: <a href="https://developer.swisscom.com/support/" target="_blank">Get Involved</a>
   support_url: https://developer.swisscom.com/support/
 
-  add_volumes_link: See the <a href="../../running/deploy-vol-services.html">Adding Volume Services to your Deployment</a> topic for more information.
   admin_read_only_role: <ul><li><strong>Admin Read-Only</strong> is a user role that has been assigned the <code>cloud_controller.admin_read_only</code> scope in UAA. This role has read-only access to all Cloud Controller API resources.</li></ul>
   admin_role: <ul><li><strong>Admin</strong> is a user role that has been assigned the <code>cloud_controller.admin</code> scope in UAA. An admin user has permissions on all orgs and spaces and can perform operational actions using the <a href="http://apidocs.cloudfoundry.org/">Cloud Controller API</a>. To create an account with <code>cloud_controller.admin</code> scope for your installation, see the <a href="../adminguide/uaa-user-management.html#creating-admin-users">Create an Admin User</a> topic.</li></ul>
   admin: your Swisscom Application Cloud administrator
@@ -107,7 +106,6 @@ template_variables:
   healthcheck_duration: The duration of the healthcheck Service Unavailable response is configurable using the manifest property <code>router.requested_route_registration_interval_in_seconds</code>, which defaults to 20 seconds.
   info_loc: In your Cloud Foundry deployment manifest
   ipsec_note:
-  keepalive: For more information, see [Router Back-End Keepalive Connections](../adminguide/routing-keepalive.html).
   keepalive_router: An operator can enable the feature by configuring a non-zero value for the manifest property `router.max_idle_connections`.
   known_issues: <a href="http://docs.cloudfoundry.org/running/troubleshooting.html">Troubleshooting Cloud Foundry</a>
   lb_health_chk_healthy:  <code>router.drain_wait</code>
@@ -164,7 +162,6 @@ template_variables:
   ssh_service_plan: 100mb
   ssh_service: MySQL
   ssl:
-  setting_rate_limit_cloud_api: <li><a href="../running/setting-rate-limit-cloud-api.html" class="subnav">Setting the Rate Limit for the Cloud Controller API</a></li>
   starting_container_count_maximum: For information about how to configure this setting, see the <a href="./max-container-starts.html">Setting a Maximum Number of Started Containers</a> topic.
   suspended_roles_table: "_suspended_org_roles_table"
   tcp_iaas: Configure these IPs as your static IPs in your deployment manifest.
