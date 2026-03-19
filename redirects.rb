@@ -4,7 +4,6 @@ r301 %r{.*}, 'https://docs.cloudfoundry.org$&', :if => Proc.new { |rack_env|
 }
 
 r301 %r{/bosh/(.*)}, 'http://bosh.io/docs/$1'
-r301 '/console/cf-api-endpoint.html', '/running/cf-api-endpoint.html'
 
 r301 %r{/deploying/ec2/.*}, '/deploying/aws/index.html'
 
@@ -37,7 +36,6 @@ r301 '/deploying/common/log_drain_blacklists.html', '/loggregator/data-sources.h
 
 r301 '/devguide/deploy-apps/domains-routes.html', '/devguide/deploy-apps/routes-domains.html'
 r301 '/devguide/deploy-apps/sts.html', '/buildpacks/java/index.html'
-r301 '/devguide/deploy-apps/api-endpoint.html', '/running/cf-api-endpoint.html'
 r301 '/devguide/installcf/whats-new-v6.html', '/cf-cli/getting-started.html'
 r301 '/devguide/installcf/http-proxy.html', '/cf-cli/http-proxy.html'
 r301 %r{/devguide/installcf/(.*)}, '/cf-cli/$1'
@@ -54,7 +52,6 @@ r301 '/running/troubleshooting/index.html', '/running/index.html#troubleshooting
 r301 '/running/troubleshooting/troubleshooting-apps.html', '/running/index.html#troubleshooting'
 r301 '/running/troubleshooting/troubleshooting-warden-services', '/running/index.html#troubleshooting'
 r301 '/running/using-vol-services.html', '/devguide/services/using-vol-services.html'
-r301 '/running/api/version.html', '/running/cf-api-endpoint.html'
 r301 '/running/distributed-tracing.html', '/adminguide/distributed-tracing.html'
 
 r301 '/concepts/diego/diego-components.html', '/concepts/diego/diego-architecture.html#core'
